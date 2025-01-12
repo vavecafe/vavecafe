@@ -4,11 +4,12 @@ import {themes as prismThemes} from 'prism-react-renderer';
 const config: Config = {
   title: 'Vave Cafe',
   tagline: 'Learn Automation and AI by Doing — For Everyone!',
-  url: 'https://vavecafe.github.io',
+  url: 'https://vave.cafe',
   baseUrl: '/',
   organizationName: 'vavecafe',
   projectName: 'vavecafe',
   trailingSlash: false,
+  onBrokenLinks: 'warn',
 
   themeConfig: { 
     navbar: {
