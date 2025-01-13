@@ -22,12 +22,12 @@ const config: Config = {
       //   height: 75,
       // },
       items: [
-        {
-          type: 'docSidebar',
-          sidebarId: 'learnSidebar',
-          position: 'left',
-          label: 'Learn Hub',
-        },
+        // {
+        //   type: 'docSidebar',
+        //   sidebarId: 'learnSidebar',
+        //   position: 'left',
+        //   label: 'Learn Hub',
+        // },
         {
           type: 'dropdown',
           label: 'Industry Solutions',
@@ -71,16 +71,16 @@ const config: Config = {
           label: 'Templates',
           position: 'left',
         },
-        {
-          to: '/blog',
-          label: 'Blog',
-          position: 'right',
-        },
-        {
-          to: '/community',
-          label: 'Community',
-          position: 'right',
-        },
+        // {
+        //   to: '/blog',
+        //   label: 'Blog',
+        //   position: 'right',
+        // },
+        // {
+        //   to: '/community',
+        //   label: 'Community',
+        //   position: 'right',
+        // },
       ],
     },
     footer: {
