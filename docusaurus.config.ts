@@ -13,7 +13,7 @@ const config: Config = {
 
   themeConfig: { 
     navbar: {
-      title: 'Vave Cafe',   
+      title: 'VaveNest',   
       // logo: {
       //   alt: 'Vave Cafe Logo',
       //   src: 'img/logo.png',
@@ -100,16 +100,37 @@ const config: Config = {
           ],
         },
         {
-          title: 'Community',
+          title: 'Contact',
           items: [
             {
-              label: 'Discord',
-              href: 'https://discord.gg/vavecafe',
+              label: 'VaveNest LLC',
+              href: '#',
             },
             {
-              label: 'GitHub',
-              href: 'https://github.com/vavecafe/vavecafe',
+              label: '4032 Jessica Leigh Ln',
+              href: '#',
             },
+            {
+              label: 'Charlotte, NC 28269',
+              href: '#',
+            },
+            {
+              label: '(704) 526-8233',
+              href: 'tel:+17045268233',
+            },
+          ],
+        },
+        {
+          title: 'Community',
+          items: [
+            // {
+            //   label: 'Discord',
+            //   href: 'https://discord.gg/vavecafe',
+            // },
+            // {
+            //   label: 'GitHub',
+            //   href: 'https://github.com/vavecafe/vavecafe',
+            // },
           ],
         },
       ],
