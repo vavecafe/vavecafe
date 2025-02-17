@@ -24,7 +24,7 @@ Before installing n8n, it’s important to secure your VPS. The following steps 
 ### Step 0: Login and Initial Update
 - **Login as root:**  
   ```bash
-  ssh root@&lt;vps_hostname&gt;
+
   ```
 - **Update system packages:**
   ```bash
@@ -166,7 +166,7 @@ docker run -it --rm \
   n8nio/n8n
 ```
 - Replace `<your_username>` and `<your_password>` with your chosen credentials.
-- n8n will be available at [http://&lt;vps_hostname&gt;:5678](http://&lt;vps_hostname&gt;:5678).
+
 
 ### Option 2: Using Docker Compose
 
@@ -191,7 +191,7 @@ docker run -it --rm \
    ```bash
    docker-compose up -d
    ```
-   n8n will run in the background and be accessible at [http://&lt;vps_hostname&gt;:5678](http://&lt;vps_hostname&gt;:5678).
+
 
 ---
 
@@ -265,4 +265,4 @@ Happy automating!
 
 ---
 
-By escaping `<vps_hostname>` as shown, the MDX parser will treat it as literal text rather than a JSX element, and the build error should be resolved. Commit these changes, and your GitHub Action should pass without MDX errors.
+By escaping as shown, the MDX parser will treat it as literal text rather than a JSX element, and the build error should be resolved. Commit these changes, and your GitHub Action should pass without MDX errors.
