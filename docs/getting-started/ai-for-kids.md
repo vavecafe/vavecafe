@@ -1,8 +1,3 @@
-Below is a complete Markdown guide that explains how to set up a secure VPS and install n8n as a self-hosted service using Docker. You can copy this document and use it as your installation guide.
-
----
-
-```markdown
 # Self-Hosting n8n: A Comprehensive Guide
 
 This guide will walk you through setting up a secure Virtual Private Server (VPS) and installing [n8n](https://n8n.io) as a self-hosted automation tool using Docker.
@@ -29,7 +24,7 @@ Before installing n8n, it’s important to secure your VPS. The following steps 
 ### Step 0: Login and Initial Update
 - **Login as root:**  
   ```bash
-  ssh root@<vps_hostname>
+  ssh root@&lt;vps_hostname&gt;
   ```
 - **Update system packages:**
   ```bash
@@ -171,7 +166,7 @@ docker run -it --rm \
   n8nio/n8n
 ```
 - Replace `<your_username>` and `<your_password>` with your chosen credentials.
-- n8n will be available at [http://<vps_hostname>:5678](http://<vps_hostname>:5678).
+- n8n will be available at [http://&lt;vps_hostname&gt;:5678](http://&lt;vps_hostname&gt;:5678).
 
 ### Option 2: Using Docker Compose
 
@@ -196,7 +191,7 @@ docker run -it --rm \
    ```bash
    docker-compose up -d
    ```
-   n8n will run in the background and be accessible at [http://<vps_hostname>:5678](http://<vps_hostname>:5678).
+   n8n will run in the background and be accessible at [http://&lt;vps_hostname&gt;:5678](http://&lt;vps_hostname&gt;:5678).
 
 ---
 
@@ -270,4 +265,4 @@ Happy automating!
 
 ---
 
-You can save the above content as `n8n-selfhost-guide.md` and use it as a step-by-step reference for installing n8n on your VPS. Enjoy your new self-hosted automation platform!
+By escaping `<vps_hostname>` as shown, the MDX parser will treat it as literal text rather than a JSX element, and the build error should be resolved. Commit these changes, and your GitHub Action should pass without MDX errors.
