@@ -1,23 +1,648 @@
-/**
- * CSS files with the .module.css suffix will be treated as CSS modules
- * and scoped locally.
- */
-
+/* Hero Section */
 .heroBanner {
-  padding: 4rem 0;
-  text-align: center;
   position: relative;
+  height: 100vh;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  background-color: #000;
+  background-image: url('/img/placeholder/hero-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  color: white;
   overflow: hidden;
 }
 
-@media screen and (max-width: 996px) {
-  .heroBanner {
-    padding: 2rem;
-  }
+.heroOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1;
 }
 
-.buttons {
+.heroContent {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.taglineContainer {
+  height: 120px;
+  margin-bottom: 2rem;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.tagline {
+  font-size: 2.5rem;
+  font-weight: 300;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.cursor {
+  display: inline-block;
+  margin-left: 3px;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.cursor.visible {
+  opacity: 1;
+}
+
+.breatheButton {
+  margin-top: 3rem;
+  animation: pulse 3s infinite;
+}
+
+.breatheLink {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  padding: 0.5rem 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 25px;
+  transition: all 0.3s ease;
+}
+
+.breatheLink:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: white;
+  text-decoration: none;
+  color: white;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Welcome Section */
+.welcomeSection {
+  padding: 6rem 0;
+  background-color: var(--ifm-color-primary-darkest);
+  color: white;
+}
+
+.welcomeContent {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.welcomeHeading {
+  font-size: 2.8rem;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+}
+
+.strikethrough {
+  text-decoration: line-through;
+}
+
+.welcomeSubheading {
+  font-size: 1.5rem;
+  margin-bottom: 3rem;
+  opacity: 0.9;
+}
+
+.subscribeForm {
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.emailInput, 
+.messageInput {
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.emailInput::placeholder, 
+.messageInput::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.emailInput:focus, 
+.messageInput:focus {
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.messageInput {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.submitButton {
+  padding: 1rem;
+  border: none;
+  border-radius: 4px;
+  background-color: white;
+  color: var(--ifm-color-primary-darkest);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.submitButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Team Section */
+.teamSection {
+  padding: 5rem 0;
+  background-color: white;
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.sectionHeader h2 {
+  font-size: 2.5rem;
+  font-weight: 500;
+  position: relative;
+  display: inline-block;
+}
+
+.sectionHeader h2:after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 3px;
+  background-color: var(--ifm-color-primary);
+}
+
+.teamContainer {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 3rem;
+}
+
+.teamMember {
+  flex: 1;
+  min-width: 220px;
+  max-width: 300px;
+  text-align: center;
+}
+
+.teamImageContainer {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto 1.5rem;
+  border: 3px solid var(--ifm-color-primary-lighter);
+}
+
+.teamImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.teamName {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.teamRole {
+  color: var(--ifm-color-emphasis-600);
+  font-size: 1rem;
+}
+
+/* Blog Section */
+.blogSection {
+  padding: 5rem 0;
+  background-color: var(--ifm-color-emphasis-100);
+}
+
+.blogContainer {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.blogCard {
+  flex: 1;
+  min-width: 280px;
+  max-width: 350px;
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.blogCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.blogImageContainer {
+  height: 180px;
+  overflow: hidden;
+}
+
+.blogImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.blogCard:hover .blogImage {
+  transform: scale(1.05);
+}
+
+.blogContent {
+  padding: 1.5rem;
+}
+
+.blogTitle {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  line-height: 1.4;
+}
+
+.blogExcerpt {
+  color: var(--ifm-color-emphasis-700);
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.blogLink {
+  color: var(--ifm-color-primary);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.blogMore {
+  text-align: center;
+}
+
+.moreLink {
+  color: var(--ifm-color-primary);
+  font-weight: 500;
+  font-size: 1.1rem;
+  text-decoration: none;
+}
+
+/* Contact Section */
+.contactSection {
+  padding: 5rem 0;
+  background-color: white;
+}
+
+.contactOptions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.contactCard {
+  flex: 1;
+  min-width: 280px;
+  max-width: 350px;
+  padding: 2rem;
+  background-color: var(--ifm-color-emphasis-100);
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.contactCard h3 {
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-size: 1.4rem;
+}
+
+.contactForm {
+  display: flex;
+  flex-direction: column;
+}
+
+.formInput,
+.formTextarea,
+.formSelect {
+  padding: 0.8rem;
+  margin-bottom: 1rem;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 4px;
+  font-size: 1rem;
+  background-color: white;
+  transition: all 0.3s ease;
+}
+
+.formInput:focus,
+.formTextarea:focus,
+.formSelect:focus {
+  outline: none;
+  border-color: var(--ifm-color-primary);
+  box-shadow: 0 0 0 2px rgba(var(--ifm-color-primary-rgb), 0.2);
+}
+
+.formTextarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.formButton {
+  padding: 0.8rem;
+  border: none;
+  border-radius: 4px;
+  background-color: var(--ifm-color-primary);
+  color: white;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.formButton:hover {
+  background-color: var(--ifm-color-primary-dark);
+}
+
+.calendarInfo {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.calendarButton {
+  width: 100%;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 4px;
+  background-color: var(--ifm-color-primary);
+  color: white;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.calendarButton:hover {
+  background-color: var(--ifm-color-primary-dark);
+}
+
+/* Newsletter Section */
+.newsletterSection {
+  padding: 4rem 0;
+  background-color: var(--ifm-color-primary-darkest);
+  color: white;
+}
+
+.newsletterContainer {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.newsletterContent {
+  flex: 1;
+  min-width: 280px;
+  padding-right: 2rem;
+}
+
+.newsletterHeading {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.newsletterSubheading {
+  opacity: 0.9;
+}
+
+.newsletterForm {
+  flex: 1;
+  min-width: 280px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.newsletterInput {
+  flex: 1;
+  min-width: 200px;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+.newsletterInput::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.newsletterInput:focus {
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.newsletterButton {
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  background-color: white;
+  color: var(--ifm-color-primary-darkest);
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.newsletterButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Footer */
+.footer {
+  padding: 4rem 0 2rem;
+  background-color: var(--ifm-color-emphasis-900);
+  color: white;
+}
+
+.footerContent {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 3rem;
+}
+
+.footerLogo {
+  flex: 2;
+  min-width: 280px;
+  margin-bottom: 2rem;
+}
+
+.footerLogo h2 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.footerLogo p {
+  opacity: 0.8;
+}
+
+.footerLinks {
+  flex: 3;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.footerColumn {
+  flex: 1;
+  min-width: 160px;
+  margin-bottom: 2rem;
+}
+
+.footerColumn h3 {
+  font-size: 1.2rem;
+  margin-bottom: 1.2rem;
+}
+
+.footerColumn ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footerColumn ul li {
+  margin-bottom: 0.8rem;
+}
+
+.footerColumn ul li a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footerColumn ul li a:hover {
+  color: white;
+  text-decoration: none;
+}
+
+.footerBottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.footerSocial {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.socialIcon {
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.socialIcon:hover {
+  color: white;
+  text-decoration: none;
+}
+
+/* Responsive styles */
+@media (max-width: 996px) {
+  .tagline {
+    font-size: 2rem;
+  }
+  
+  .welcomeHeading {
+    font-size: 2.2rem;
+  }
+  
+  .welcomeSubheading {
+    font-size: 1.2rem;
+  }
+  
+  .newsletterContainer {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .newsletterContent {
+    padding-right: 0;
+    margin-bottom: 2rem;
+  }
+  
+  .footerLogo {
+    text-align: center;
+    margin-bottom: 3rem;
+    flex: 0 0 100%;
+  }
+  
+  .footerLinks {
+    justify-content: space-around;
+  }
+  
+  .footerBottom {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.5rem;
+  }
+  
+  .footerSocial {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .taglineContainer {
+    height: 160px;
+  }
+  
+  .contactOptions {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .contactCard {
+    width: 100%;
+  }
 }

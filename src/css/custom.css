@@ -6,25 +6,205 @@
 
 /* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #2e8555;
-  --ifm-color-primary-dark: #29784c;
-  --ifm-color-primary-darker: #277148;
-  --ifm-color-primary-darkest: #205d3b;
-  --ifm-color-primary-light: #33925d;
-  --ifm-color-primary-lighter: #359962;
-  --ifm-color-primary-lightest: #3cad6e;
+  --ifm-color-primary: #506AE2;
+  --ifm-color-primary-dark: #3850DB;
+  --ifm-color-primary-darker: #263DC6;
+  --ifm-color-primary-darkest: #1F33A8;
+  --ifm-color-primary-light: #6F87E9;
+  --ifm-color-primary-lighter: #8FA4EF;
+  --ifm-color-primary-lightest: #C3CEF7;
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  
+  /* Custom variables */
+  --vave-background-light: #F8F9FB;
+  --vave-text-primary: #333333;
+  --vave-text-secondary: #6A7280;
+  --vave-border-color: #E5E7EB;
+  --vave-box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --vave-transition-standard: all 0.3s ease;
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
-  --ifm-color-primary: #25c2a0;
-  --ifm-color-primary-dark: #21af90;
-  --ifm-color-primary-darker: #1fa588;
-  --ifm-color-primary-darkest: #1a8870;
-  --ifm-color-primary-light: #29d5b0;
-  --ifm-color-primary-lighter: #32d8b4;
-  --ifm-color-primary-lightest: #4fddbf;
+  --ifm-color-primary: #8FA4EF;
+  --ifm-color-primary-dark: #6F87E9;
+  --ifm-color-primary-darker: #506AE2;
+  --ifm-color-primary-darkest: #3850DB;
+  --ifm-color-primary-light: #AEC0F5;
+  --ifm-color-primary-lighter: #C3CEF7;
+  --ifm-color-primary-lightest: #E2E8FB;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+  
+  /* Custom dark mode variables */
+  --vave-background-light: #1E2028;
+  --vave-text-primary: #F1F5F9;
+  --vave-text-secondary: #9CA3AF;
+  --vave-border-color: #2D3748;
+  --vave-box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2), 0 2px 4px -1px rgba(0, 0, 0, 0.15);
+}
+
+/* Global styles */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: var(--vave-text-primary);
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+p {
+  line-height: 1.6;
+}
+
+/* Navbar styles */
+.navbar {
+  box-shadow: var(--vave-box-shadow);
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+}
+
+[data-theme='dark'] .navbar {
+  background-color: rgba(30, 32, 40, 0.95);
+}
+
+.navbar-contact-link {
+  background-color: var(--ifm-color-primary);
+  color: white !important;
+  border-radius: 24px;
+  padding: 0.5rem 1.25rem !important;
+  margin-left: 0.5rem;
+  transition: var(--vave-transition-standard);
+}
+
+.navbar-contact-link:hover {
+  background-color: var(--ifm-color-primary-dark);
+  transform: translateY(-2px);
+}
+
+/* Button styles */
+.button {
+  border-radius: 6px;
+  font-weight: 500;
+  transition: var(--vave-transition-standard);
+}
+
+.button--primary {
+  background-color: var(--ifm-color-primary);
+  color: white;
+}
+
+.button--primary:hover {
+  background-color: var(--ifm-color-primary-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--vave-box-shadow);
+}
+
+.button--secondary {
+  background-color: white;
+  border: 1px solid var(--ifm-color-primary);
+  color: var(--ifm-color-primary);
+}
+
+.button--secondary:hover {
+  background-color: var(--ifm-color-primary-lightest);
+  transform: translateY(-2px);
+}
+
+/* Footer customization */
+.footer {
+  background-color: var(--ifm-color-emphasis-900);
+  color: white;
+}
+
+.footer__link-item:hover {
+  color: var(--ifm-color-primary-lightest);
+}
+
+/* Card styles */
+.card {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: var(--vave-box-shadow);
+  transition: var(--vave-transition-standard);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Form elements */
+input, textarea, select {
+  border-radius: 6px;
+  border: 1px solid var(--vave-border-color);
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  transition: var(--vave-transition-standard);
+}
+
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  border-color: var(--ifm-color-primary);
+  box-shadow: 0 0 0 3px rgba(80, 106, 226, 0.2);
+}
+
+/* Animation utilities */
+.fade-in {
+  animation: fadeIn 0.6s ease-in;
+}
+
+.slide-up {
+  animation: slideUp 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #bdbdbd;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #999;
+}
+
+[data-theme='dark'] ::-webkit-scrollbar-track {
+  background: #2d3748;
+}
+
+[data-theme='dark'] ::-webkit-scrollbar-thumb {
+  background: #4a5568;
+}
+
+[data-theme='dark'] ::-webkit-scrollbar-thumb:hover {
+  background: #718096;
 }

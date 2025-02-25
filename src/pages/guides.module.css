@@ -1,0 +1,185 @@
+.guidesHeader {
+    padding: 5rem 0;
+    background-color: var(--ifm-color-primary-darkest);
+    color: white;
+    text-align: center;
+  }
+  
+  .guidesHeader h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+  
+  .guidesSubtitle {
+    font-size: 1.5rem;
+    opacity: 0.9;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .guidesGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
+  }
+  
+  .guideCategory {
+    background-color: var(--ifm-color-emphasis-0);
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: var(--vave-box-shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .guideCategory:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .categoryTitle {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--ifm-color-primary-dark);
+  }
+  
+  .categoryDescription {
+    color: var(--vave-text-secondary);
+    margin-bottom: 1.5rem;
+  }
+  
+  .guidesList {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.5rem 0;
+  }
+  
+  .guideItem {
+    margin-bottom: 0.8rem;
+    padding-left: 1.5rem;
+    position: relative;
+  }
+  
+  .guideItem:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.6rem;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: var(--ifm-color-primary);
+  }
+  
+  .guideLink {
+    color: var(--vave-text-primary);
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+  
+  .guideLink:hover {
+    color: var(--ifm-color-primary);
+    text-decoration: none;
+  }
+  
+  .viewAllLink {
+    display: inline-block;
+    color: var(--ifm-color-primary);
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+  
+  .viewAllLink:hover {
+    color: var(--ifm-color-primary-dark);
+    text-decoration: none;
+    transform: translateX(5px);
+  }
+  
+  .resourcesSection {
+    margin-top: 4rem;
+    padding-top: 4rem;
+    border-top: 1px solid var(--vave-border-color);
+    text-align: center;
+  }
+  
+  .resourcesSection h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .resourcesDescription {
+    max-width: 700px;
+    margin: 0 auto 3rem;
+    color: var(--vave-text-secondary);
+    font-size: 1.2rem;
+  }
+  
+  .resourcesGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 2rem;
+  }
+  
+  .resourceCard {
+    background-color: var(--ifm-color-emphasis-0);
+    border-radius: 8px;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: var(--vave-box-shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .resourceCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .resourceIcon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .resourceCard h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    color: var(--ifm-color-primary-dark);
+  }
+  
+  .resourceCard p {
+    color: var(--vave-text-secondary);
+    margin-bottom: 1.5rem;
+  }
+  
+  .resourceLink {
+    display: inline-block;
+    color: var(--ifm-color-primary);
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+  
+  .resourceLink:hover {
+    color: var(--ifm-color-primary-dark);
+    text-decoration: none;
+    transform: translateX(5px);
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .guidesHeader h1 {
+      font-size: 2.5rem;
+    }
+    
+    .guidesSubtitle {
+      font-size: 1.2rem;
+    }
+    
+    .resourcesSection h2 {
+      font-size: 2rem;
+    }
+    
+    .resourcesDescription {
+      font-size: 1rem;
+    }
+  }
